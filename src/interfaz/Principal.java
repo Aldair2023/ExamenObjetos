@@ -6,17 +6,25 @@
 
 package interfaz;
 
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author amoreno15
  */
 public class Principal extends javax.swing.JFrame {
 
+    double v[];
     /**
      * Creates new form Principal
      */
     public Principal() {
         initComponents();
+        this.setLocationRelativeTo(this);
+        txtMarca.requestFocusInWindow();
+        
     }
 
     /**
@@ -28,21 +36,213 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtPrecio = new javax.swing.JTextField();
+        txtCiudad = new javax.swing.JTextField();
+        txtTipo = new javax.swing.JTextField();
+        txtPlaca = new javax.swing.JTextField();
+        txtColor = new javax.swing.JTextField();
+        txtMarca = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtCaracteristicas = new javax.swing.JTextArea();
+        cmdCalcular = new javax.swing.JButton();
+        cmdMostrar = new javax.swing.JButton();
+        cmdLimpiar = new javax.swing.JButton();
+        cmdImpuesto = new javax.swing.JButton();
+        txtImpuesto = new javax.swing.JTextField();
+        cmdMostrarC = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Arial", 2, 24)); // NOI18N
+        jLabel1.setText("Compra de Autos");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 190, -1));
+        jPanel1.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 70, -1));
+        jPanel1.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 70, -1));
+        jPanel1.add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 70, -1));
+        jPanel1.add(txtPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 70, -1));
+        jPanel1.add(txtColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 60, -1));
+        jPanel1.add(txtMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 60, -1));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel2.setText("Color");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, -1, 20));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel3.setText("Precio");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel4.setText("Ciudad de Registro");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel5.setText("Tipo");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel6.setText("Placa");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
+        jLabel7.setText("Marca");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Caracteristicas e Impuestos", 0, 0, new java.awt.Font("Arial", 2, 14))); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtCaracteristicas.setEditable(false);
+        txtCaracteristicas.setColumns(20);
+        txtCaracteristicas.setRows(5);
+        jScrollPane1.setViewportView(txtCaracteristicas);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 230, 120));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 250, 150));
+
+        cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 130, 50));
+
+        cmdMostrar.setText("Mostrar");
+        jPanel1.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 130, 50));
+
+        cmdLimpiar.setText("Limpiar");
+        cmdLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdLimpiarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 300, 130, 60));
+
+        cmdImpuesto.setText("Impuesto");
+        cmdImpuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdImpuestoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdImpuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, -1, -1));
+        jPanel1.add(txtImpuesto, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 200, 70));
+
+        cmdMostrarC.setText("Mostrar Caracteristicas");
+        cmdMostrarC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdMostrarCActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdMostrarC, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 230, 160, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaz/carro-plateado-3472.jpg"))); // NOI18N
+        jLabel8.setText("jLabel8");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 440));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+        // TODO add your handling code here:
+        Scanner lea = new Scanner(System.in);
+        
+        String Marca, Color, Placa, Ciudad_De_Registro, Tipo;
+        double Precio, op1, impuesto, op3;
+        
+        
+        Marca = lea.next(txtMarca.getText());
+        Color = lea.next(txtColor.getText());
+        Placa = lea.next(txtPlaca.getText());
+        Ciudad_De_Registro = lea.next(txtCiudad.getText());
+        Tipo = lea.next(txtTipo.getText());
+        Precio = Double.parseDouble(txtPrecio.getText());
+        impuesto = Double.parseDouble(txtImpuesto.getText());
+        
+        if(txtMarca.getText().trim().isEmpty() && txtColor.getText().trim().isEmpty() && txtPlaca.getText().trim().isEmpty() && txtCiudad.getText().trim().isEmpty() && txtTipo.getText().trim().isEmpty() && txtPrecio.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"por favor llene los espacios en blanco", "ERROR",JOptionPane.WARNING_MESSAGE);
+        }else if(txtMarca.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"por favor agrege la marca del auto", "ERROR", JOptionPane.WARNING_MESSAGE);
+        }else if(txtPlaca.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"por favor indique la placa de auto", "ERROR", JOptionPane.WARNING_MESSAGE);
+        }else if(txtCiudad.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"por favor indique la ciudad de registro del auto", "ERROR", JOptionPane.WARNING_MESSAGE);
+        }else if(txtTipo.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"indique el tipo de auto","ERROR",JOptionPane.WARNING_MESSAGE);
+        }else if(txtPrecio.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this,"indique el precio de auto", "ERROR", JOptionPane.WARNING_MESSAGE);
+        }else{
+        
+        
+        if(Marca.equalsIgnoreCase("kia") && Precio < 70000000 && Color.equalsIgnoreCase("blanco")){
+            op1 = Precio * 0.02;
+            impuesto = op1;
+        }else if(Marca.equalsIgnoreCase("chevrolet") && Precio < 70000000 && Color.equalsIgnoreCase("negro")){
+            op1 = Precio * 0.015;
+            impuesto = op1;
+        }else if(Marca.equalsIgnoreCase("Renault") && Precio < 50000000 && Color.equalsIgnoreCase("azul")){
+            op1 = Precio * 0.013;
+            impuesto = op1;
+        }else if(Marca.equalsIgnoreCase("Toyota") && Precio < 50000000 && Color.equalsIgnoreCase("rojo")){
+            op1 = Precio * 0.013;
+            impuesto = op1;
+        }else{
+            op1 = Precio * 0.01;
+            impuesto = op1;
+        }
+        
+        }
+        
+        
+
+        
+        
+    }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLimpiarActionPerformed
+        // TODO add your handling code here:
+        
+        txtMarca.setText("");
+        txtPrecio.setText("");
+        txtPlaca.setText("");
+        txtCiudad.setText("");
+        txtTipo.setText("");
+        txtColor.setText("");
+        txtMarca.requestFocusInWindow();
+        
+    }//GEN-LAST:event_cmdLimpiarActionPerformed
+
+    private void cmdImpuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdImpuestoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cmdImpuestoActionPerformed
+
+    private void cmdMostrarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdMostrarCActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cmdMostrarCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +280,29 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdCalcular;
+    private javax.swing.JButton cmdImpuesto;
+    private javax.swing.JButton cmdLimpiar;
+    private javax.swing.JButton cmdMostrar;
+    private javax.swing.JButton cmdMostrarC;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtCaracteristicas;
+    private javax.swing.JTextField txtCiudad;
+    private javax.swing.JTextField txtColor;
+    private javax.swing.JTextField txtImpuesto;
+    private javax.swing.JTextField txtMarca;
+    private javax.swing.JTextField txtPlaca;
+    private javax.swing.JTextField txtPrecio;
+    private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
 }
